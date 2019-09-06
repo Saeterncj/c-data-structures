@@ -26,6 +26,7 @@
 * This section need only include "forward referenced" functions.
 *
 *----------------------------------------------------------------------------*/
+// function for stack using a known size stack.
 void Push(int);
 void Pop();
 int Top();
@@ -55,8 +56,8 @@ void printList(Node* head);
 
 int A[MAX_SIZE];
 int top = -1;
-
-
+struct stack {
+};
 /*----------------------------------------------------------------------------
 *
 * Place typedefs, structs, unions, and enums that will be used only

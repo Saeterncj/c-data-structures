@@ -1,22 +1,16 @@
-#pragma once
-/* ----------------------------------------------------------------------------
-@ file: System.h
-Date Created: 2-14-17
-Purpose: Header file for the whole system. For anything that will be used
-in multiple files should be here.
----------------------------------------------------------------------------- */
-
-#ifndef System_h_
-#define System_h_
-/* ----------------------------------------------------------------------------
-defining essential stuff
----------------------------------------------------------------------------- */
-using namespace std;
-
-/* ----------------------------------------------------------------------------
-Place global variables here
----------------------------------------------------------------------------- */
-// uint8_t MAZE[MaxNumOfRows][MaxNumOfRows] = { 0 };
+// Header files
+#ifndef filename_h_
+#define filename_h_
+/******************************************************************************
+*
+* @file     drive.h
+* @brief
+* @version  V1.00
+* @date     1, April 2016
+*
+* @note
+*
+******************************************************************************/
 
 /*----------------------------------------------------------------------------
 *
@@ -24,23 +18,11 @@ Place global variables here
 * header file here.
 *
 *----------------------------------------------------------------------------*/
-#include <iostream>
-#include <vector>
-#include <algorithm>
-#include <functional>
-#include <queue>
-#include <set>
-#include <unordered_set>
-#include "SingleLinkList.h"
-#include "DoubleLinkedList.h"
-#include "Stack.h"
-#include "Queue.h"
-#include "Trees.h"
-#include "Heap.h"
-#include "Graph.h"
+
 /*-----------------------------------------------------------------------------
 Meaningful name that describes what is about to follow
 -----------------------------------------------------------------------------*/
+
 
 /*----------------------------------------------------------------------------
 *
@@ -55,12 +37,6 @@ Meaningful name that describes what is about to follow
 * multiple source files here.
 *
 *----------------------------------------------------------------------------*/
-struct Node {
-	int data;
-	Node* next;
-	Node* prev;
-};
-
 /*----------------------------------------------------------------------------
 *
 * Place global variables that are used by multiple source files here.

@@ -1,80 +1,84 @@
 
 #include "System.h";
+//#include <string>
+//#include <vector>
 #include <string>
-#include <vector>
-string gString = "Remove the Last three";
 
-void removeString(string myString) {
-	if (myString.length() == 3) {
-		cout << "\n";
-		return;
-	}
-	cout << myString.front();
-	myString.erase(myString.begin());
-	removeString(myString);
-	//return;
-}
-string writeSequence(int i) {
-	int val;
-	string toCC,temp;
-	if (i == 1) {
-		return "1";
-	}
-	else if (i == 2) {
-		return "1 1";
-	}
-	val = (i + 1)/2;
-	toCC = to_string(val);
-	temp = writeSequence(i - 2);
-	temp = toCC + " " + temp + " " + toCC;
-	return temp;
-	
-}
-#define MAX 10000
-bool isPrime[MAX + 1];
-vector<int> prime;
+// set::lower_bound/upper_bound
+#include <iostream>
+#include <set>
 
-void SieveOfEratosthenes() {
-	memset(isPrime, true, sizeof(isPrime));
-
-	isPrime[1] = false;
-
-	for (int p = 2; p * p <= MAX; p++) {
-
-		// If prime[p] is not changed, then it is a prime
-		if (isPrime[p] == true) {
-
-			// Set all multiples of p to non-prime
-			for (int i = p * 2; i <= MAX; i += p)
-				isPrime[i] = false;
+bool resolution(vector <string> ref, vector<string> prov) {
+	int refS = ref.size();
+	int provs = prov.size();
+	int j = 0;
+	bool flag = false;
+	for (int i(0); i < provs; i++) {
+		if (flag && j ==refS-1 || flag && prov[i] != ref[j] ) {
+			return false;
 		}
+		else {
+			if(j < refS-1)j++;
+			while (prov[i] != ref[j] && i < provs) {
+				i++;
+				flag = true;
+			}
+		}	
 	}
-	for (int i = 2; i < MAX; i++) {
-		if (isPrime[i]) {
-			prime.push_back(i);
-			//cout << i << " ";
-		}
-	}
+	return true;
 }
-
+int main()
+{
+	vector<string> ref = { "he", "is", "a", "star" };
+	vector<string> prov = {"he", "is", "a", "super","star", "star"};
+	if (resolution(ref, prov)) {
+		cout << "YES";
+	}
+	else {
+		cout << "NO";
+	}
+	getchar();
+	return 0;
+}
+/*
 int main() {
 	//singleLinkedList();
 	//DoubleLinkedList();
 	//stackLoop();
 	//queueLoop();
 	//treesLoop();
-	//use recurion on removing the last 3 strings
-	//removeString(gString);
-	//cout << writeSequence(8);
-	//cout << endl;
-	SieveOfEratosthenes();
-	for (int i = 0; i < 10;i++) {
-		cout << prime.size() << " ";
+	//heapLoop();
+	//graphLoop();
+	/*
+	vector<int> vect1 = { 1,2,3,4,5,6,7,8 };
+	int d = 5;
+	vector<int> vect2(vect1.begin(), vect1.begin() + d/2);
+	vector<int> vect3(vect1.begin()+d/2, vect1.begin() + d);
+	for (auto i : vect1) {
+		cout << i << " ";
+	}cout << endl;
+	for (auto i : vect2) {
+		cout << i << " ";
+	}cout << endl;
+	for (auto i : vect3) {
+		cout << i << " ";
+	}cout << endl;
+
+	vector<int> sj;
+	cout << sj.size() << endl;
+	*/
+	/*
+	unordered_set<int> comp;
+	auto it = comp.find(5);
+	if (it != comp.end()) {
+		cout << "Im found";
 	}
-	//gString.erase(gString.begin());
-	//cout << gString;
-	//cout << myNewString <<"\n";
+	else
+		cout << "Im not found";
+		
 	system("pause");
 	return 0; 	
 }
+*/
+
 

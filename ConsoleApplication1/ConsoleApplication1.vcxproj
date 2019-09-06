@@ -140,6 +140,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="DoubleLinkedList.cpp" />
+    <ClCompile Include="Graph.cpp" />
+    <ClCompile Include="Heap.cpp" />
+    <ClCompile Include="Layout.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Queue.cpp" />
     <ClCompile Include="SingleLinkList.cpp" />
@@ -148,6 +151,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DoubleLinkedList.h" />
+    <ClInclude Include="Graph.h" />
+    <ClInclude Include="Heap.h" />
+    <ClInclude Include="Layout.h" />
     <ClInclude Include="Queue.h" />
     <ClInclude Include="SingleLinkList.h" />
     <ClInclude Include="Stack.h" />
